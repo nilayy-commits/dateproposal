@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>A Little Invitation for Saumya 🎬</title>
+<title>A Little Invitation for ayush 🎬</title>
 <meta name="description" content="A tiny magical invitation.">
 
 <!-- Google Fonts -->
@@ -443,7 +443,7 @@ button{ border:none; background:none; cursor:pointer; font:inherit; color:inheri
     <div class="curtain curtain-left"></div>
     <div class="curtain curtain-right"></div>
     <div class="intro-content">
-      <p class="intro-line" data-line="0">Hey Saumya...</p>
+      <p class="intro-line" data-line="0">Hey ayush...</p>
       <p class="intro-line" data-line="1">I've been wanting to ask you something...</p>
       <p class="intro-line" data-line="2">So...</p>
       <p class="intro-line" data-line="3">Will you play a tiny game with me?</p>
@@ -504,8 +504,8 @@ button{ border:none; background:none; cursor:pointer; font:inherit; color:inheri
       <h1 class="screen-title">Let's pick our outfits!</h1>
       <div class="outfit-columns">
         <div class="outfit-col">
-          <h3 class="outfit-heading">for Saumya</h3>
-          <div class="card-grid outfit-grid" id="outfitSaumya"></div>
+          <h3 class="outfit-heading">for ayush</h3>
+          <div class="card-grid outfit-grid" id="outfitayush"></div>
         </div>
         <div class="outfit-col">
           <h3 class="outfit-heading">for me</h3>
@@ -537,7 +537,7 @@ button{ border:none; background:none; cursor:pointer; font:inherit; color:inheri
           <div class="ticket-perf"></div>
           <p class="ticket-brand">✦ MOVIE DATE CINEMAS ✦</p>
           <h2 class="ticket-heading">Movie Date <span>🎬</span></h2>
-          <div class="ticket-row"><span>Guest</span><strong>Saumya ❤️</strong></div>
+          <div class="ticket-row"><span>Guest</span><strong>ayush ❤️</strong></div>
           <div class="ticket-row"><span>Companion</span><strong>Me</strong></div>
           <div class="ticket-row"><span>Date</span><strong id="ticketDate">—</strong></div>
           <div class="ticket-row"><span>Transport</span><strong id="ticketTransport">—</strong></div>
@@ -592,7 +592,7 @@ button{ border:none; background:none; cursor:pointer; font:inherit; color:inheri
     accepted: null,
     date: null,
     transport: null,
-    outfitSaumya: null,
+    outfitayush: null,
     outfitMe: null,
     snacks: [],
     timestamp: null,
@@ -826,20 +826,20 @@ button{ border:none; background:none; cursor:pointer; font:inherit; color:inheri
   /* ---------------------------------------------------------------
      SCREEN 4 — OUTFITS (single select per column)
   --------------------------------------------------------------- */
-  const outfitSaumyaOptions = ["🌸 Cute floral dress","🤍 White top + blue jeans","🖤 Elegant black outfit","💗 Pink aesthetic outfit","💙 Oversized hoodie look","💚 Kurti"];
+  const outfitayushOptions = ["🌸 Cute floral dress","🤍 White top + blue jeans","🖤 Elegant black outfit","💗 Pink aesthetic outfit","💙 Oversized hoodie look","💚 Kurti"];
   const outfitMeOptions = ["🤍 White shirt + black jeans","🖤 Black shirt","💙 Denim jacket","❤️ Smart casual","🤎 Hoodie"];
 
-  const outfitSaumyaGrid = document.getElementById("outfitSaumya");
-  outfitSaumyaOptions.forEach(label => {
+  const outfitayushGrid = document.getElementById("outfitayush");
+  outfitayushOptions.forEach(label => {
     const [emoji, ...rest] = label.split(" ");
     const card = makePickCard(emoji, rest.join(" "));
     card.addEventListener("click", () => {
-      selectSingle(outfitSaumyaGrid, card);
-      responses.outfitSaumya = label;
+      selectSingle(outfitayushGrid, card);
+      responses.outfitayush = label;
       checkOutfitContinue();
       saveResponses();
     });
-    outfitSaumyaGrid.appendChild(card);
+    outfitayushGrid.appendChild(card);
   });
 
   const outfitMeGrid = document.getElementById("outfitMe");
@@ -857,7 +857,7 @@ button{ border:none; background:none; cursor:pointer; font:inherit; color:inheri
 
   function checkOutfitContinue(){
     const btn = document.getElementById("continue4");
-    if (responses.outfitSaumya && responses.outfitMe) btn.classList.remove("disabled");
+    if (responses.outfitayush && responses.outfitMe) btn.classList.remove("disabled");
   }
 
   /* ---------------------------------------------------------------
@@ -901,7 +901,7 @@ button{ border:none; background:none; cursor:pointer; font:inherit; color:inheri
     document.getElementById("ticketDate").textContent = responses.date || "—";
     document.getElementById("ticketTransport").textContent = responses.transport || "—";
     document.getElementById("ticketOutfits").textContent =
-      [responses.outfitSaumya, responses.outfitMe].filter(Boolean).join(" & ") || "—";
+      [responses.outfitayush, responses.outfitMe].filter(Boolean).join(" & ") || "—";
     document.getElementById("ticketSnacks").textContent = responses.snacks.join(", ") || "—";
     buildBarcode();
   }
